@@ -30,14 +30,19 @@ beforeEach(async () => {
   contractAddress = fooTokenContract.address;
   transaction = fooTokenContract.deployTransaction;
 
-  expect(transaction).to.exist;
-
   contractFunctions = successfullDeploy.functions;
   // console.log(contractFunctions)
 });
 
-describe("The token's contract:", function () {
+describe("FooToken contract:", function () {
   
+  it("beforeEach successfully deployed the contract", async () => {
+    expect(contract).to.be.exist;
+    expect(transaction).to.exist;
+  });
+
+  //--------------------------------------------------------------------------------------------------------------------
+
   it("gets minted with 1 token", async function () {
     let initialBalance = await fooTokenContract.balanceOf(user1Address);
     expect(initialBalance).to.be.equal(1);

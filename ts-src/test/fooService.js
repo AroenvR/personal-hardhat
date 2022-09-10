@@ -32,13 +32,18 @@ beforeEach(async () => {
 
   const successfullDeploy = await contract.deployed();
   contractFunctions = successfullDeploy.functions;
-
-  expect(transaction).to.exist;
 });
 
 // TODO: Check if I need any afterEeach() functions.
 
-describe("beforeEach successfully deployed the contract, the contract:", function () {
+describe("FooService contract:", function () {
+
+  it("beforeEach successfully deployed the contract", async () => {
+    expect(contract).to.be.exist;
+    expect(transaction).to.exist;
+  });
+
+  //--------------------------------------------------------------------------------------------------------------------
 
   it("greets us", async function () {
     expect(await contract.getGreeting()).to.be.equal("Hi! You've successfully connected to the FenService contract!");

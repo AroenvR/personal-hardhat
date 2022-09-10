@@ -14,7 +14,7 @@ const adressList = {
     personal: wallet.address, // My public address
 }
 
-describe("Binance wallet", async () => {
+describe("Binance wallet:", async () => {
 
     it("returns BNB balance", async () => {
         const balance = await provider.getBalance(wallet.address); // Actual wallet's native currency (Binance Coin)

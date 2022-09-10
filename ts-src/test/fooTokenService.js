@@ -35,11 +35,16 @@ beforeEach(async () => {
 
   fooTokenServiceAddress = fooTokenServiceContract.address;
   transaction = fooTokenServiceContract.deployTransaction;
-
-  expect(transaction).to.exist;
 });
 
-describe("The FooTokenService contract:", function () {
+describe("FooTokenService contract:", function () {
+
+    it("beforeEach successfully deployed the contract", async () => {
+        expect(contract).to.be.exist;
+        expect(transaction).to.exist;
+    });
+
+    //--------------------------------------------------------------------------------------------------------------------
 
     it("asserts the creator of the contract", async function () {
         let creator = await fooTokenServiceContract.getCreatorAddress();

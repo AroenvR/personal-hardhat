@@ -19,31 +19,38 @@ The tests contain examples of how a frontend could interact with SmartContracts.
 ## Setup
 
 ```
-Check if you have yarn installed with: yarn --version
-    If it is not installed: npm install --global yarn
+Check if you have npm installed with: npm --version  
+    If it is not installed: TODO
 
-(yarn init) <- not sure if necessary
-
-yarn install
+cd personal-hardhat-template  
+npm i
 ```
 
 ## .env.example
 
 ```
-Set up your environment variables
+Create a .env file and set up your environment variables
 ```
 
 ## Test
 
 ```
-npm run test
+npm test  
+or  
+npm run test  
+or  
+npx hardhat test  
+
+To run a specific file, pass the file location with --grep: npm test --grep ts-src/test/fooService.js
 ```
 
 ## Deploy
 
 ```
 ts-src/deploy
-yarn hardhat --network [network-name] deploy
+npm hardhat --network [network-name] deploy // TODO: double check this is works!!!
+
+--> old was yarn hardhat --network <remove this once verified />
 ```
 
 ## Find it
@@ -55,12 +62,6 @@ The new SmartContract will be under deployments/[network-name]
 ## Verify
 
 ```
-yarn hardhat --network [network-name] etherscan-verify
-```
-
-## Check your current progress
-```
-Note to self if life made me wait with continuing this project: 
-cd smartcontract-deployer
-npx hardhat test
+npm hardhat --network [network-name] etherscan-verify  
+// TODO: same yarn vs npm story as in Deploy.
 ```
